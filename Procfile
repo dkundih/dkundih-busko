@@ -1,1 +1,1 @@
-web: prototype.py
+web: python prototype.py
