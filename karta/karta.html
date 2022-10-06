@@ -23,7 +23,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_0a4240a11fe5410bafe25926414cf14f {
+                #map_e5b728891f914889870c624cfb2ee032 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -35,13 +35,13 @@
 </head>
 <body>    
     
-            <div class="folium-map" id="map_0a4240a11fe5410bafe25926414cf14f" ></div>
+            <div class="folium-map" id="map_e5b728891f914889870c624cfb2ee032" ></div>
         
 </body>
 <script>    
     
-            var map_0a4240a11fe5410bafe25926414cf14f = L.map(
-                "map_0a4240a11fe5410bafe25926414cf14f",
+            var map_e5b728891f914889870c624cfb2ee032 = L.map(
+                "map_e5b728891f914889870c624cfb2ee032",
                 {
                     center: [46.1639, 16.83],
                     crs: L.CRS.EPSG3857,
@@ -55,70 +55,58 @@
 
         
     
-            var tile_layer_54fce6355d4e45d4a5cc7a635ea41530 = L.tileLayer(
+            var tile_layer_f678eb0326714dfdbaf3b9d0019f0d06 = L.tileLayer(
                 "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
                 {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_0a4240a11fe5410bafe25926414cf14f);
+            ).addTo(map_e5b728891f914889870c624cfb2ee032);
         
     
-        function geo_json_bbf374db15c84048b53f6e398a99975d_styler(feature) {
+        function geo_json_196723ba81074a82a29c272f6b63fda5_styler(feature) {
             switch(feature.id) {
                 default:
-                    return {"color": "red", "fillColor": "red", "fillOpacity": 0.1, "weight": 5};
+                    return {"color": "green", "fillColor": "green", "fillOpacity": 0.1, "weight": 5};
             }
         }
 
-        function geo_json_bbf374db15c84048b53f6e398a99975d_onEachFeature(feature, layer) {
+        function geo_json_196723ba81074a82a29c272f6b63fda5_onEachFeature(feature, layer) {
             layer.on({
             });
         };
-        var geo_json_bbf374db15c84048b53f6e398a99975d = L.geoJson(null, {
-                onEachFeature: geo_json_bbf374db15c84048b53f6e398a99975d_onEachFeature,
+        var geo_json_196723ba81074a82a29c272f6b63fda5 = L.geoJson(null, {
+                onEachFeature: geo_json_196723ba81074a82a29c272f6b63fda5_onEachFeature,
             
-                style: geo_json_bbf374db15c84048b53f6e398a99975d_styler,
+                style: geo_json_196723ba81074a82a29c272f6b63fda5_styler,
         });
 
-        function geo_json_bbf374db15c84048b53f6e398a99975d_add (data) {
-            geo_json_bbf374db15c84048b53f6e398a99975d
+        function geo_json_196723ba81074a82a29c272f6b63fda5_add (data) {
+            geo_json_196723ba81074a82a29c272f6b63fda5
                 .addData(data)
-                .addTo(map_0a4240a11fe5410bafe25926414cf14f);
+                .addTo(map_e5b728891f914889870c624cfb2ee032);
         }
-            geo_json_bbf374db15c84048b53f6e398a99975d_add({"features": [{"geometry": {"coordinates": [[16.817670464515686, 46.164718500910425], [16.8176007270813, 46.164857825564056], [16.817697286605835, 46.165034302952144], [16.81772142648697, 46.165121612608495], [16.81772142648697, 46.165203349182484], [16.817659735679626, 46.16531480795129], [16.817584633827206, 46.1654578463737], [16.817587316036224, 46.16553772481141], [16.81761145591736, 46.16562689130252], [16.81766778230667, 46.165723488171466], [16.817718744277954, 46.16579222045573], [16.817801892757416, 46.16592225427205], [16.817901134490967, 46.166018850622365], [16.818383932113647, 46.166650437963256], [16.819250285625458, 46.1677259773634], [16.81944876909256, 46.1678615792837], [16.819666028022766, 46.167974890221004], [16.81971698999405, 46.167993465762244], [16.81984573602676, 46.16790058799339], [16.82033658027649, 46.16770368660479], [16.82083010673523, 46.167523502641004], [16.822439432144165, 46.16690307086919], [16.822954416275024, 46.16664858036406], [16.823633015155792, 46.16628263209953], [16.825695633888245, 46.16519220329317], [16.826446652412415, 46.164837391303614], [16.827610731124874, 46.164478861680735], [16.82856559753418, 46.16418349096139], [16.828882098197937, 46.16405902609528], [16.829582154750824, 46.163655906610934], [16.82968407869339, 46.16355187529676]], "type": "LineString"}, "id": "0", "properties": {}, "type": "Feature"}], "type": "FeatureCollection"});
+            geo_json_196723ba81074a82a29c272f6b63fda5_add({"features": [{"geometry": {"coordinates": [[16.817670464515686, 46.164718500910425], [16.8176007270813, 46.164857825564056], [16.817697286605835, 46.165034302952144], [16.81772142648697, 46.165121612608495], [16.81772142648697, 46.165203349182484], [16.817659735679626, 46.16531480795129], [16.817584633827206, 46.1654578463737], [16.817587316036224, 46.16553772481141], [16.81761145591736, 46.16562689130252], [16.81766778230667, 46.165723488171466], [16.817718744277954, 46.16579222045573], [16.817801892757416, 46.16592225427205], [16.817901134490967, 46.166018850622365], [16.818383932113647, 46.166650437963256], [16.819250285625458, 46.1677259773634], [16.81944876909256, 46.1678615792837], [16.819666028022766, 46.167974890221004], [16.81971698999405, 46.167993465762244], [16.81984573602676, 46.16790058799339], [16.82033658027649, 46.16770368660479], [16.82083010673523, 46.167523502641004], [16.822439432144165, 46.16690307086919], [16.822954416275024, 46.16664858036406], [16.823633015155792, 46.16628263209953], [16.825695633888245, 46.16519220329317], [16.826446652412415, 46.164837391303614], [16.827610731124874, 46.164478861680735], [16.82856559753418, 46.16418349096139], [16.828882098197937, 46.16405902609528], [16.829582154750824, 46.163655906610934], [16.82968407869339, 46.16355187529676]], "type": "LineString"}, "id": "0", "properties": {}, "type": "Feature"}], "type": "FeatureCollection"});
 
         
     
-            var marker_a5eefdae14dc46c698211482d6a231ff = L.marker(
+            var marker_f069999f5b0a4b039d92f5f197f5c454 = L.marker(
                 [46.16474814765847, 16.817654371261597],
                 {}
-            ).addTo(map_0a4240a11fe5410bafe25926414cf14f);
+            ).addTo(map_e5b728891f914889870c624cfb2ee032);
         
     
-        var custom_icon_b4f3394c39844e3bb44d0c10a605d7f9 = L.icon({"iconSize": [30, 30], "iconUrl": "https://avatars.githubusercontent.com/u/86894643?v=4"});
-        marker_a5eefdae14dc46c698211482d6a231ff.setIcon(custom_icon_b4f3394c39844e3bb44d0c10a605d7f9);
+        var custom_icon_6ea42a1f685349c5a5dd94b2a6c6c47e = L.icon({"iconSize": [30, 30], "iconUrl": "https://avatars.githubusercontent.com/u/86894643?v=4"});
+        marker_f069999f5b0a4b039d92f5f197f5c454.setIcon(custom_icon_6ea42a1f685349c5a5dd94b2a6c6c47e);
         
     
-        var popup_85abe07f565a46c3b05b17f3702bf84f = L.popup({"maxWidth": "100%"});
+        var popup_e37ab5d08ebb453ea813f02b8920f451 = L.popup({"maxWidth": "100%"});
 
         
-            var html_cdca0101ad114d6d8ee3cee53ee39b87 = $(`<div id="html_cdca0101ad114d6d8ee3cee53ee39b87" style="width: 100.0%; height: 100.0%;"><H4>ŽELJEZNIČKI KOLODVOR</H4><p>Početak linije</p><img src="https://raw.githubusercontent.com/dkundih/dkundih/main/.logistics/BLUERED_GHiLI.jpg" alt = "Početak" style="width:300px;height:80px;"/></div>`)[0];
-            popup_85abe07f565a46c3b05b17f3702bf84f.setContent(html_cdca0101ad114d6d8ee3cee53ee39b87);
+            var html_b06d149f3a694d3c8d150d0ae97d66f8 = $(`<div id="html_b06d149f3a694d3c8d150d0ae97d66f8" style="width: 100.0%; height: 100.0%;"><H4>ŽELJEZNIČKI KOLODVOR</H4>                         <p>Početak linije</p>                         <img src="https://raw.githubusercontent.com/dkundih/dkundih/main/.logistics/BLUERED_GHiLI.jpg" alt = "Željeznički kolodvor" style="width:300px;height:80px;/>"                         <p>Sada je: 2022-10-06 20:28:31.961566</p>                         </div>`)[0];
+            popup_e37ab5d08ebb453ea813f02b8920f451.setContent(html_b06d149f3a694d3c8d150d0ae97d66f8);
         
 
-        marker_a5eefdae14dc46c698211482d6a231ff.bindPopup(popup_85abe07f565a46c3b05b17f3702bf84f)
+        marker_f069999f5b0a4b039d92f5f197f5c454.bindPopup(popup_e37ab5d08ebb453ea813f02b8920f451)
         ;
 
         
     
-    
-            var marker_a3d38ef057eb4a439b22e3d22c568109 = L.marker(
-                [46.16620453648541, 16.82376980781555],
-                {}
-            ).addTo(map_0a4240a11fe5410bafe25926414cf14f);
-        
-    
-            var marker_b1049dcbc06646cc8bbdd36236cfb7a8 = L.marker(
-                [46.16364096913081, 16.829617023468018],
-                {}
-            ).addTo(map_0a4240a11fe5410bafe25926414cf14f);
-        
 </script>
