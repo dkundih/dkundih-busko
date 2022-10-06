@@ -3,7 +3,7 @@ import json
 import dash
 from dash import html
 
-with open(r'lokacije/linija1_postaje.geojson') as f:
+with open('lokacije/linija1_postaje.geojson') as f:
     gj = json.load(f)
 features = gj['features']
 
@@ -22,7 +22,7 @@ style = {
     'fillOpacity' : 0.1,
 }
 
-folium.GeoJson(r'lokacije/linija1.geojson', style_function = lambda x: style, name = 'linija1').add_to(m)
+folium.GeoJson('lokacije/linija1.geojson', style_function = lambda x: style, name = 'linija1').add_to(m)
 folium.Marker(location = t1, icon = t1_icon, popup = t1_popup).add_to(m)
 folium.Marker(location = t2).add_to(m)
 folium.Marker(location = t3).add_to(m)
@@ -32,11 +32,11 @@ m.save(r'karta\karta.html')
 #APP
 
 app = dash.Dash(__name__)
+server = app.server
 
 app.layout = html.Div(
-    html.Iframe(id = 'map', srcDoc= open(r'karta/karta.html', 'r', encoding = 'utf8').read(), width = '100%', height = '1000')
+    html.Iframe(id = 'map', srcDoc= open('karta/karta.html', 'r', encoding = 'utf8').read(), width = '100%', height = '1000')
 )
-
 
 if __name__ == '__main__':
     app.run_server()
