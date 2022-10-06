@@ -16,9 +16,9 @@ t3 = [features[2]['geometry']['coordinates'][1], features[2]['geometry']['coordi
 m = folium.Map(location = [46.1639, 16.83], zoom_start = 14.8)
 
 style = {
-    'color' : 'red',
+    'color' : 'green',
     'weight' : 5,
-    'fillColor' : 'red',
+    'fillColor' : 'green',
     'fillOpacity' : 0.1,
 }
 
