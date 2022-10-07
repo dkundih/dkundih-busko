@@ -86,9 +86,111 @@ folium.Marker(location = lokacijaMB('DOM MLADIH'), icon = ikona('https://raw.git
 
 folium.Marker(location = lokacijaEB('SVEUČILIŠTE SJEVER'), icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/bicikl.png'), popup = infoMB_EB('SVEUČILIŠTE SJEVER', 'Trg dr. Žarka Dolinara 1, 48000, Koprivnica','https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/ebicikli.jpg')).add_to(m)
 
-# vlaj postaje i info o dolascima/odlascima
+# vlak postaje i info o dolascima/odlascima
 
+folium.Marker(
+    location = lokacijaV('KC-VŽ'),
+    icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/vlak.png'),
+    popup = infoV(
+    naslov = 'SMJER VARAŽDIN',
+    opis = 'željeznička pruga prema Varaždinu',
+    slika = 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/vlak.jpg',
+    dk_ime = 'VARAŽDIN -> KOPRIVNICA',
+    ok_ime= 'KOPRIVNICA -> VARAŽDIN',
+    ok = T_V_OUTPUT['KC-VŽ']['OK'],
+    dk = T_V_OUTPUT['KC-VŽ']['PK'],
+            )).add_to(m)
 
+folium.Marker(
+    location = lokacijaV('KC-BT'),
+    icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/vlak.png'),
+    popup = infoV(
+    naslov = 'SMJER BOTOVO',
+    opis = 'željeznička pruga prema Botovu',
+    slika = 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/vlak.jpg',
+    dk_ime = 'GYEKENYES -> KOPRIVNICA',
+    ok_ime= 'KOPRIVNICA -> GYEKENYES',
+    ok = T_V_OUTPUT['KC-BT']['OK'],
+    dk = T_V_OUTPUT['KC-BT']['PK'],
+            )).add_to(m)
+
+folium.Marker(
+    location = lokacijaV('KC-VT'),
+    icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/vlak.png'),
+    popup = infoV(
+    naslov = 'SMJER VIROVITICA',
+    opis = 'željeznička pruga prema Botovu',
+    slika = 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/vlak.jpg',
+    dk_ime = 'VIROVITICA -> KOPRIVNICA',
+    ok_ime= 'KOPRIVNICA -> VIROVITICA',
+    ok = T_V_OUTPUT['KC-VT']['OK'],
+    dk = T_V_OUTPUT['KC-VT']['PK'],
+            )).add_to(m)
+
+folium.Marker(
+    location = lokacijaV('KC-ZG'),
+    icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/vlak.png'),
+    popup = infoV(
+    naslov = 'SMJER ZAGREB',
+    opis = 'željeznička pruga prema Zagrebu',
+    slika = 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/vlak.jpg',
+    dk_ime = 'ZAGREB -> KOPRIVNICA',
+    ok_ime= 'KOPRIVNICA -> ZAGREB',
+    ok = T_V_OUTPUT['KC-ZG']['OK'],
+    dk = T_V_OUTPUT['KC-ZG']['PK'],
+            )).add_to(m)
+
+folium.Marker(
+    location = lokacijaV('KUNOVEC-SUBOTICA'),
+    icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/vlak.png'),
+    popup = infoV(
+    naslov = 'KUNOVEC-SUBOTICA',
+    opis = 'željezničko stajalište',
+    slika = 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/vlak.jpg',
+    dk_ime = 'KUNOVEC-SUBOTICA -> KOPRIVNICA',
+    ok_ime= 'KOPRIVNICA -> KUNOVEC-SUBOTICA',
+    ok = T_V_OUTPUT['KUNOVEC-SUBOTICA']['OK'],
+    dk = T_V_OUTPUT['KUNOVEC-SUBOTICA']['PK'],
+            )).add_to(m)
+
+folium.Marker(
+    location = lokacijaV('DRNJE'),
+    icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/vlak.png'),
+    popup = infoV(
+    naslov = 'DRNJE',
+    opis = 'željezničko stajalište',
+    slika = 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/vlak.jpg',
+    dk_ime = 'DRNJE -> KOPRIVNICA',
+    ok_ime= 'KOPRIVNICA -> DRNJE',
+    ok = T_V_OUTPUT['DRNJE']['OK'],
+    dk = T_V_OUTPUT['DRNJE']['PK'],
+            )).add_to(m)
+
+folium.Marker(
+    location = lokacijaV('BREGI'),
+    icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/vlak.png'),
+    popup = infoV(
+    naslov = 'BREGI',
+    opis = 'željeznički kolodvor',
+    slika = 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/vlak.jpg',
+    dk_ime = 'BREGI -> KOPRIVNICA',
+    ok_ime= 'KOPRIVNICA -> DRNJE',
+    ok = T_V_OUTPUT['BREGI']['OK'],
+    dk = T_V_OUTPUT['BREGI']['PK'],
+            )).add_to(m)
+
+folium.Marker(
+    location = lokacijaV('MUČNA REKA'),
+    icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/vlak.png'),
+    popup = infoV(
+    naslov = 'MUČNA REKA',
+    opis = 'željeznički kolodvor',
+    slika = 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/vlak.jpg',
+    dk_ime = 'MUČNA REKA -> KOPRIVNICA',
+    ok_ime= 'KOPRIVNICA -> MUČNA REKA',
+    ok = T_V_OUTPUT['MUČNA REKA']['OK'],
+    dk = T_V_OUTPUT['MUČNA REKA']['PK'],
+            )).add_to(m)
 
 
 # Željeznički Stilovi
