@@ -1,9 +1,6 @@
 import folium
-import json
 import dash
-from dash.dependencies import Input, Output
 from dash import html
-from dash import dcc
 
 from lokacije.B_postaje import T_B_L1_OUTPUT # autobus
 from lokacije.E_bicikli_postaje import T_E_BICIKLI_OUTPUT # e-bicikli
@@ -250,7 +247,7 @@ m.save(r'karta\karta.html')
 
 app = dash.Dash(__name__)
 server = app.server
-app.title = 'dkundih-busko'
+app.title = 'dkundih-promet'
 
 app.layout = html.Div([
     
