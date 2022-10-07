@@ -4,10 +4,6 @@ import dash
 from dash.dependencies import Input, Output
 from dash import html
 from dash import dcc
-from datetime import datetime
-
-
-time = datetime.now()
 
 
 from lokacije.postaje import T_B_L1_OUTPUT
@@ -30,16 +26,18 @@ def infoL1(naslov, opis = None, ak = None, ka = None, slika = None,):
                         <b>KAMPUS -> KOLODVOR</b>
                         <p><b>Busko prolazi kroz čvor u:</b>
                         {ak}</p>
-                        <img src="{slika}" alt = "Postaja" style="width:300px;height:80px;/>"
+                        <img src="{slika}" alt = "Postaja" style="width:300px;height:160px;/>"
                         """)
 
 m = folium.Map(location = [46.1639, 16.83], zoom_start = 14.8)
+folium.TileLayer('cartodbdark_matter').add_to(m)
 
-folium.Marker(location = lokacijaL1('AUTOBUSNI KOLODVOR'), icon = ikona('https://avatars.githubusercontent.com/u/86894643?v=4'), popup = infoL1('AUTOBUSNI KOLODVOR','Kolodvorska ul. 31, 48000, Koprivnica', T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['K-A'], T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['A-K'], 'https://raw.githubusercontent.com/dkundih/dkundih/main/.logistics/BLUERED_GHiLI.jpg')).add_to(m)
-folium.Marker(location = lokacijaL1('TRG MLADOSTI'), icon = ikona('https://avatars.githubusercontent.com/u/86894643?v=4'), popup = infoL1('TRG MLADOSTI', 'Trg mladosti 1, 48000, Koprivnica', T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['K-A'], T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['A-K'], 'https://raw.githubusercontent.com/dkundih/dkundih/main/.logistics/BLUERED_GHiLI.jpg')).add_to(m)
-folium.Marker(location = lokacijaL1('BOLNICA'), icon = ikona('https://avatars.githubusercontent.com/u/86894643?v=4'), popup = infoL1('BOLNICA', 'Ulica braće Radić 8, 48000, Koprivnica', T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['K-A'], T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['A-K'], 'https://raw.githubusercontent.com/dkundih/dkundih/main/.logistics/BLUERED_GHiLI.jpg')).add_to(m)
-folium.Marker(location = lokacijaL1('STADION'), icon = ikona('https://avatars.githubusercontent.com/u/86894643?v=4'), popup = infoL1('STADION', 'Ulica Mihovila Pavleka Miškine, 48000, Koprivnica', T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['K-A'], T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['A-K'], 'https://raw.githubusercontent.com/dkundih/dkundih/main/.logistics/BLUERED_GHiLI.jpg')).add_to(m)
-folium.Marker(location = lokacijaL1('KAMPUS'), icon = ikona('https://avatars.githubusercontent.com/u/86894643?v=4'), popup = infoL1('KAMPUS', 'Trg dr. Žarka Dolinara 1, 48000, Koprivnica', T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['K-A'], T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['A-K'],'https://raw.githubusercontent.com/dkundih/dkundih/main/.logistics/BLUERED_GHiLI.jpg')).add_to(m)
+
+folium.Marker(location = lokacijaL1('AUTOBUSNI KOLODVOR'), icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/autobusni.jpg'), popup = infoL1('AUTOBUSNI KOLODVOR','Kolodvorska ul. 31, 48000, Koprivnica', T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['K-A'], T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['A-K'], 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/autobusni.jpg')).add_to(m)
+folium.Marker(location = lokacijaL1('TRG MLADOSTI'), icon = ikona('https://avatars.githubusercontent.com/u/86894643?v=4'), popup = infoL1('TRG MLADOSTI', 'Trg mladosti 1, 48000, Koprivnica', T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['K-A'], T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['A-K'], 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/mladosti.jpg')).add_to(m)
+folium.Marker(location = lokacijaL1('BOLNICA'), icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/bolnica.jpg'), popup = infoL1('BOLNICA', 'Ulica braće Radić 8, 48000, Koprivnica', T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['K-A'], T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['A-K'], 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/bolnica.jpg')).add_to(m)
+folium.Marker(location = lokacijaL1('STADION'), icon = ikona('https://avatars.githubusercontent.com/u/86894643?v=4'), popup = infoL1('STADION', 'Ulica Mihovila Pavleka Miškine, 48000, Koprivnica', T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['K-A'], T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['A-K'], 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/stadion.jpg')).add_to(m)
+folium.Marker(location = lokacijaL1('KAMPUS'), icon = ikona('https://avatars.githubusercontent.com/u/86894643?v=4'), popup = infoL1('KAMPUS', 'Trg dr. Žarka Dolinara 1, 48000, Koprivnica', T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['K-A'], T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['A-K'],'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/kampus.jpg')).add_to(m)
 
 # Željeznički Stilovi
 
@@ -58,9 +56,9 @@ folium.Marker(location = lokacijaL1('KAMPUS'), icon = ikona('https://avatars.git
 }
 
 Ž3 = {
-    'color' : 'blue',
+    'color' : 'yellow',
     'weight' : 7,
-    'fillColor' : 'blue',
+    'fillColor' : 'yellow',
     'fillOpacity' : 0.1,
 }
 
