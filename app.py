@@ -32,33 +32,35 @@ def ikona(ikona):
 
 def infoL1(naslov, opis = None, ak = None, ka = None, slika = None,):
     return folium.Popup(f"""<H4>{naslov}</H4>
-                        <p>{opis}</p>
+                        <p><i>{opis}</i></p>
                         <b>KOLODVOR -> KAMPUS</b>
                         <p><b>Busko prolazi kroz čvor u:</b>
                         {ka}</p>
                         <b>KAMPUS -> KOLODVOR</b>
                         <p><b>Busko prolazi kroz čvor u:</b>
                         {ak}</p>
+                        <p><b><u>*Vozi samo radnim danima (pon-pet). Ne vozi vikendom (sub i ned).</u></b></p>
                         <img src="{slika}" alt = "Postaja" style="width:300px;height:160px;/>"
                         """)
     
 def infoMB_EB(naslov, opis = None, slika = None,):
     return folium.Popup(f"""<H4>{naslov}</H4>
-                        <p>{opis}</p>
-                        <b>Korištenje bicikala se ne naplaćuje.</b>
+                        <p><i>{opis}</i></p>
+                        <b><u>*Korištenje bicikala se ne naplaćuje. Potrebno je posjedovanje kartice.</u></b>
                         <p></p>
                         <img src="{slika}" alt = "Postaja" style="width:300px;height:160px;/>"
                         """)
     
 def infoV(naslov, opis = None, dk_ime = None, dk = None,ok_ime = None, ok = None, slika = None,):
     return folium.Popup(f"""<H4>{naslov}</H4>
-                        <p>{opis}</p>
+                        <p><i>{opis}</i></p>
                         <b>{dk_ime}</b>
                         <p><b>Vlak dolazi na čvor u:</b>
                         {dk}</p>
                         <b>{ok_ime}</b>
                         <p><b>Vlak dolazi na čvor u:</b>
                         {ok}</p>
+                        <p><b><u>*Vozni red prikazan je samo za radni tjedan (pon-pet). Vozni red vikendom razlikuje se od prikazanog.</u></b></p>
                         <img src="{slika}" alt = "Postaja" style="width:300px;height:160px;/>"
                         """)
 
@@ -90,7 +92,7 @@ folium.Marker(
     icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/vlak.png'),
     popup = infoV(
     naslov = 'SMJER VARAŽDIN',
-    opis = 'željeznička pruga prema Varaždinu',
+    opis = 'željeznička pruga prema Varaždinu.',
     slika = 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/vlak.jpg',
     dk_ime = 'VARAŽDIN -> KOPRIVNICA',
     ok_ime= 'KOPRIVNICA -> VARAŽDIN',
@@ -102,11 +104,11 @@ folium.Marker(
     location = lokacijaV('KC-BT'),
     icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/vlak.png'),
     popup = infoV(
-    naslov = 'SMJER BOTOVO',
-    opis = 'željeznička pruga prema Botovu',
+    naslov = 'SMJER BUDIMPEŠTA',
+    opis = 'željeznička pruga prema Budimpešti.',
     slika = 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/vlak.jpg',
-    dk_ime = 'GYEKENYES -> KOPRIVNICA',
-    ok_ime= 'KOPRIVNICA -> GYEKENYES',
+    dk_ime = 'BUDIMPEŠTA -> KOPRIVNICA',
+    ok_ime= 'KOPRIVNICA -> BUDIMPEŠTA',
     ok = T_V_OUTPUT['KC-BT']['OK'],
     dk = T_V_OUTPUT['KC-BT']['PK'],
             )).add_to(m)
@@ -116,7 +118,7 @@ folium.Marker(
     icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/vlak.png'),
     popup = infoV(
     naslov = 'SMJER VIROVITICA',
-    opis = 'željeznička pruga prema Botovu',
+    opis = 'željeznička pruga prema Virovitici.',
     slika = 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/vlak.jpg',
     dk_ime = 'VIROVITICA -> KOPRIVNICA',
     ok_ime= 'KOPRIVNICA -> VIROVITICA',
@@ -129,7 +131,7 @@ folium.Marker(
     icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/vlak.png'),
     popup = infoV(
     naslov = 'SMJER ZAGREB',
-    opis = 'željeznička pruga prema Zagrebu',
+    opis = 'željeznička pruga prema Zagrebu.',
     slika = 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/vlak.jpg',
     dk_ime = 'ZAGREB -> KOPRIVNICA',
     ok_ime= 'KOPRIVNICA -> ZAGREB',
@@ -142,7 +144,7 @@ folium.Marker(
     icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/vlak.png'),
     popup = infoV(
     naslov = 'KUNOVEC-SUBOTICA',
-    opis = 'željezničko stajalište',
+    opis = 'željezničko stajalište.',
     slika = 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/vlak.jpg',
     dk_ime = 'KUNOVEC-SUBOTICA -> KOPRIVNICA',
     ok_ime= 'KOPRIVNICA -> KUNOVEC-SUBOTICA',
@@ -155,7 +157,7 @@ folium.Marker(
     icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/vlak.png'),
     popup = infoV(
     naslov = 'DRNJE',
-    opis = 'željezničko stajalište',
+    opis = 'željezničko stajalište.',
     slika = 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/vlak.jpg',
     dk_ime = 'DRNJE -> KOPRIVNICA',
     ok_ime= 'KOPRIVNICA -> DRNJE',
@@ -168,7 +170,7 @@ folium.Marker(
     icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/vlak.png'),
     popup = infoV(
     naslov = 'BREGI',
-    opis = 'željeznički kolodvor',
+    opis = 'željeznički kolodvor.',
     slika = 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/vlak.jpg',
     dk_ime = 'BREGI -> KOPRIVNICA',
     ok_ime= 'KOPRIVNICA -> DRNJE',
@@ -181,7 +183,7 @@ folium.Marker(
     icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/vlak.png'),
     popup = infoV(
     naslov = 'MUČNA REKA',
-    opis = 'željeznički kolodvor',
+    opis = 'željeznički kolodvor.',
     slika = 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/vlak.jpg',
     dk_ime = 'MUČNA REKA -> KOPRIVNICA',
     ok_ime= 'KOPRIVNICA -> MUČNA REKA',
@@ -256,5 +258,5 @@ app.layout = html.Div([
 ])
 
 if __name__ == '__main__':
-    app.run_server(debug = True)
+    app.run_server()
     
