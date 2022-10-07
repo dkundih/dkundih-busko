@@ -5,17 +5,27 @@ from dash.dependencies import Input, Output
 from dash import html
 from dash import dcc
 
-
-from lokacije.postaje import T_B_L1_OUTPUT
-
+from lokacije.postaje import T_B_L1_OUTPUT # autobus
+from lokacije.E_bicikli_postaje import T_E_BICIKLI_OUTPUT # e-bicikli
+from lokacije.M_bicikli_postaje import T_M_BICIKLI_OUTPUT # bicikli
 
 def lokacijaL1(ime,):
     x = T_B_L1_OUTPUT[ime]['X']
     y = T_B_L1_OUTPUT[ime]['Y']
     return [x, y]
 
+def lokacijaMB(ime,):
+    x = T_M_BICIKLI_OUTPUT[ime]['X']
+    y = T_M_BICIKLI_OUTPUT[ime]['Y']
+    return [x, y]
+
+def lokacijaEB(ime,):
+    x = T_E_BICIKLI_OUTPUT[ime]['X']
+    y = T_E_BICIKLI_OUTPUT[ime]['Y']
+    return [x, y]
+
 def ikona(ikona):
-    return folium.features.CustomIcon(ikona, icon_size=(30, 30))
+    return folium.features.CustomIcon(ikona, icon_size=(40, 50))
 
 def infoL1(naslov, opis = None, ak = None, ka = None, slika = None,):
     return folium.Popup(f"""<H4>{naslov}</H4>
@@ -28,16 +38,26 @@ def infoL1(naslov, opis = None, ak = None, ka = None, slika = None,):
                         {ak}</p>
                         <img src="{slika}" alt = "Postaja" style="width:300px;height:160px;/>"
                         """)
+    
+def infoMB_EB(naslov, opis = None, slika = None,):
+    return folium.Popup(f"""<H4>{naslov}</H4>
+                        <p>{opis}</p>
+                        <b>Korištenje bicikala se ne naplaćuje.</b>
+                        <img src="{slika}" alt = "Postaja" style="width:300px;height:160px;/>"
+                        """)
 
 m = folium.Map(location = [46.1639, 16.83], zoom_start = 14.8)
 folium.TileLayer('cartodbdark_matter').add_to(m)
 
-
+# autobusne postaje
 folium.Marker(location = lokacijaL1('AUTOBUSNI KOLODVOR'), icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/bus.png'), popup = infoL1('AUTOBUSNI KOLODVOR','Kolodvorska ul. 31, 48000, Koprivnica', T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['K-A'], T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['A-K'], 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/autobusni.jpg')).add_to(m)
 folium.Marker(location = lokacijaL1('TRG MLADOSTI'), icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/bus.png'), popup = infoL1('TRG MLADOSTI', 'Trg mladosti 1, 48000, Koprivnica', T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['K-A'], T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['A-K'], 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/mladosti.jpg')).add_to(m)
 folium.Marker(location = lokacijaL1('BOLNICA'), icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/bus.png'), popup = infoL1('BOLNICA', 'Ulica braće Radić 8, 48000, Koprivnica', T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['K-A'], T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['A-K'], 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/bolnica.jpg')).add_to(m)
 folium.Marker(location = lokacijaL1('STADION'), icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/bus.png'), popup = infoL1('STADION', 'Ulica Mihovila Pavleka Miškine, 48000, Koprivnica', T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['K-A'], T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['A-K'], 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/stadion.jpg')).add_to(m)
 folium.Marker(location = lokacijaL1('KAMPUS'), icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/bus.png'), popup = infoL1('KAMPUS', 'Trg dr. Žarka Dolinara 1, 48000, Koprivnica', T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['K-A'], T_B_L1_OUTPUT['AUTOBUSNI KOLODVOR']['A-K'],'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/kampus.jpg')).add_to(m)
+
+# bicikl postaje
+folium.Marker(location = lokacijaMB('LENIŠĆE'), icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/bicikl.png'), popup = infoMB_EB('LENIŠĆE', 'Centar Lenišće, 48000, Koprivnica','https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/bicikli.jpg')).add_to(m)
 
 # Željeznički Stilovi
 
@@ -70,10 +90,24 @@ folium.Marker(location = lokacijaL1('KAMPUS'), icon = ikona('https://raw.githubu
 }
 
 # Željezničke rute
+
 folium.GeoJson('lokacije/Ž_ČK-KC.geojson', style_function = lambda x: Ž1, name = 'Ž_ČK-KC').add_to(m)
 folium.GeoJson('lokacije/Ž_VT-KC.geojson', style_function = lambda x: Ž2, name = 'Ž_VT-KC').add_to(m)
 folium.GeoJson('lokacije/Ž_ZG-KC.geojson', style_function = lambda x: Ž3, name = 'Ž_ZG-KC').add_to(m)
 folium.GeoJson('lokacije/Ž_BT-KC.geojson', style_function = lambda x: Ž4, name = 'Ž_BT-KC').add_to(m)
+
+# Autobusni Stilovi
+
+B1 = {
+    'color' : 'orange',
+    'weight' : 7,
+    'fillColor' : 'orange',
+    'fillOpacity' : 0.1,
+}
+
+
+# Autobusne rute
+folium.GeoJson('lokacije/B_L1.geojson', style_function = lambda x: B1, name = 'B_L1').add_to(m)
 
 
 m.save(r'karta\karta.html')
