@@ -5,9 +5,10 @@ from dash.dependencies import Input, Output
 from dash import html
 from dash import dcc
 
-from lokacije.postaje import T_B_L1_OUTPUT # autobus
+from lokacije.B_postaje import T_B_L1_OUTPUT # autobus
 from lokacije.E_bicikli_postaje import T_E_BICIKLI_OUTPUT # e-bicikli
 from lokacije.M_bicikli_postaje import T_M_BICIKLI_OUTPUT # bicikli
+from lokacije.V_postaje import T_V_OUTPUT # vlak
 
 def lokacijaL1(ime,):
     x = T_B_L1_OUTPUT[ime]['X']
@@ -17,6 +18,11 @@ def lokacijaL1(ime,):
 def lokacijaMB(ime,):
     x = T_M_BICIKLI_OUTPUT[ime]['X']
     y = T_M_BICIKLI_OUTPUT[ime]['Y']
+    return [x, y]
+
+def lokacijaV(ime,):
+    x = T_V_OUTPUT[ime]['X']
+    y = T_V_OUTPUT[ime]['Y']
     return [x, y]
 
 def lokacijaEB(ime,):
@@ -43,6 +49,19 @@ def infoMB_EB(naslov, opis = None, slika = None,):
     return folium.Popup(f"""<H4>{naslov}</H4>
                         <p>{opis}</p>
                         <b>Korištenje bicikala se ne naplaćuje.</b>
+                        <p></p>
+                        <img src="{slika}" alt = "Postaja" style="width:300px;height:160px;/>"
+                        """)
+    
+def infoV(naslov, opis = None, dk_ime = None, dk = None,ok_ime = None, ok = None, slika = None,):
+    return folium.Popup(f"""<H4>{naslov}</H4>
+                        <p>{opis}</p>
+                        <b>{dk_ime}</b>
+                        <p><b>Vlak dolazi na čvor u:</b>
+                        {dk}</p>
+                        <b>{ok_ime}</b>
+                        <p><b>Vlak dolazi na čvor u:</b>
+                        {ok}</p>
                         <img src="{slika}" alt = "Postaja" style="width:300px;height:160px;/>"
                         """)
 
@@ -58,6 +77,19 @@ folium.Marker(location = lokacijaL1('KAMPUS'), icon = ikona('https://raw.githubu
 
 # bicikl postaje
 folium.Marker(location = lokacijaMB('LENIŠĆE'), icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/bicikl.png'), popup = infoMB_EB('LENIŠĆE', 'Centar Lenišće, 48000, Koprivnica','https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/bicikli.jpg')).add_to(m)
+folium.Marker(location = lokacijaMB('CERINE'), icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/bicikl.png'), popup = infoMB_EB('CERINE', 'Ulica Miroslava Krleže 81, 48000, Koprivnica','https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/bicikli.jpg')).add_to(m)
+folium.Marker(location = lokacijaMB('KAMPUS'), icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/bicikl.png'), popup = infoMB_EB('KAMPUS', 'Trg dr. Žarka Dolinara 1, Koprivnica','https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/bicikli.jpg')).add_to(m)
+folium.Marker(location = lokacijaMB('ŽELJEZNIČKI KOLODVOR'), icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/bicikl.png'), popup = infoMB_EB('ŽELJEZNIČKI KOLODVOR', 'Kolodvorska, 48000, Koprivnica','https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/bicikli.jpg')).add_to(m)
+folium.Marker(location = lokacijaMB('GROBLJE'), icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/bicikl.png'), popup = infoMB_EB('GROBLJE', 'Varaždinska cesta, 48000, Koprivnica','https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/bicikli.jpg')).add_to(m)
+folium.Marker(location = lokacijaMB('ZRINSKI TRG'), icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/bicikl.png'), popup = infoMB_EB('ZRINSKI TRG', 'Zrinski trg, 48000, Koprivnica','https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/bicikli.jpg')).add_to(m)
+folium.Marker(location = lokacijaMB('DOM MLADIH'), icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/bicikl.png'), popup = infoMB_EB('DOM MLADIH', 'Opatička ulica, 48000, Koprivnica','https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/bicikli.jpg')).add_to(m)
+
+folium.Marker(location = lokacijaEB('SVEUČILIŠTE SJEVER'), icon = ikona('https://raw.githubusercontent.com/dkundih/dkundih-busko/master/ikone/bicikl.png'), popup = infoMB_EB('SVEUČILIŠTE SJEVER', 'Trg dr. Žarka Dolinara 1, 48000, Koprivnica','https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/ebicikli.jpg')).add_to(m)
+
+# vlaj postaje i info o dolascima/odlascima
+
+
+
 
 # Željeznički Stilovi
 
