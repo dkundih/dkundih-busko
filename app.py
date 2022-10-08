@@ -61,7 +61,7 @@ def infoV(naslov, opis = None, dk_ime = None, dk = None,ok_ime = None, ok = None
                         <p><b>Vlak se nalazi na čvoru u:</b>
                         {ok}</p>
                         <p><b><u>*Vozni red prikazan je samo za radni tjedan (pon-pet). Vozni red vikendom razlikuje se od prikazanog.</u></b></p>
-                        <img src="{slika}" alt = "Postaja" style="width:300px;height:150px;/>"
+                        <img src="{slika}" alt = "Postaja" style="width:300px;height:140px;/>"
                         """)
 
 m = folium.Map(location = [46.1639, 16.83], zoom_start = 14.8)
