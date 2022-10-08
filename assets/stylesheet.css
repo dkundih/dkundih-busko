@@ -1,0 +1,60 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{ 
+  background-color: rgb(0, 20, 29);
+}
+
+.footer_style{
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Segoe UI", sans-serif;
+  font-size: medium;
+  font-weight: bold;
+  justify-content: center;
+  color: hsl(0, 0%, 100%);
+}
+
+.footer_style a:link, a:visited {
+  color: hsl(182, 84%, 83%);
+  font-size: medium;
+  justify-content: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.footer_style  a:hover {
+  color: hsl(204, 100%, 77%);
+  font-size: medium;
+  justify-content: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+
+.header_style{
+  display: inline-block;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-family: "Segoe UI", sans-serif;
+  font-size: large;
+  font-weight: 900;
+  justify-content: center;
+  color: hsl(208, 80%, 80%);
+}
+
+.header_style a:link, a:visited {
+  color: hsl(208, 80%, 80%);
+  font-size: large;
+  justify-content: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.header_style  a:hover {
+  color: hsl(209, 91%, 78%);
+  font-size: large;
+  font-family: "Segoe UI", sans-serif;
+}

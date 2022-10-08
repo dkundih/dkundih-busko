@@ -251,9 +251,30 @@ app = dash.Dash(__name__)
 server = app.server
 app.title = 'dkundih-promet'
 
+
 app.layout = html.Div([
     
-    html.Iframe(id = 'mapa', srcDoc= open('karta/karta.html', 'r', encoding = 'utf8').read(), width = '100%', height = '1000'),
+    html.Div([
+        html.Div(['ODRŽIVA MOBILNOST U KOPRIVNICI',
+                  ], className='header_style'),
+    ], id='header'),
+
+    html.Div([
+    html.Iframe(id = 'mapa', srcDoc= open('karta/karta.html', 'r', encoding = 'utf8').read(), width = '100%', height = '830'),
+    ], id = 'body'),
+    
+    html.Div([
+        html.Div(['(c) ',
+                  html.A('David Kundih, 2022.',
+                         href='https://www.linkedin.com/in/dkundih/'),
+                  ], className='footer_style'),
+        html.Div(['Aplikaciju pokreće ', html.A('Dash', href='https://plotly.com/dash/')],
+                 className='footer_style'),
+        html.Div(['Programski kod dostupan na ', html.A('GitHub repozitoriju ', href='https://www.github.com/dkundih')],
+                 className='footer_style'),
+                html.Div(['Ova aplikacija služi samo za potrebe demonstracije. ',],
+                 className='footer_style'),
+    ], id='footer'),
 
 ])
 
