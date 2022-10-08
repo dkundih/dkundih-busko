@@ -34,10 +34,10 @@ def infoL1(naslov, opis = None, ak = None, ka = None, slika = None,):
     return folium.Popup(f"""<H4>{naslov}</H4>
                         <p><i>{opis}</i></p>
                         <b>KOLODVOR -> KAMPUS</b>
-                        <p><b>Busko prolazi kroz čvor u:</b>
+                        <p><b>Busko se nalazi na čvoru u:</b>
                         {ka}</p>
                         <b>KAMPUS -> KOLODVOR</b>
-                        <p><b>Busko prolazi kroz čvor u:</b>
+                        <p><b>Busko se nalazi na čvoru u u:</b>
                         {ak}</p>
                         <p><b><u>*Vozi samo radnim danima (pon-pet). Ne vozi vikendom (sub i ned).</u></b></p>
                         <img src="{slika}" alt = "Postaja" style="width:300px;height:160px;/>"
@@ -48,7 +48,7 @@ def infoMB_EB(naslov, opis = None, slika = None,):
                         <p><i>{opis}</i></p>
                         <b><u>*Korištenje bicikala se ne naplaćuje. Potrebno je posjedovanje kartice.</u></b>
                         <p></p>
-                        <img src="{slika}" alt = "Postaja" style="width:300px;height:160px;/>"
+                        <img src="{slika}" alt = "Postaja" style="width:300px;height:170px;/>"
                         """)
     
 def infoV(naslov, opis = None, dk_ime = None, dk = None,ok_ime = None, ok = None, slika = None,):
@@ -58,10 +58,10 @@ def infoV(naslov, opis = None, dk_ime = None, dk = None,ok_ime = None, ok = None
                         <p><b>Vlak dolazi na čvor u:</b>
                         {dk}</p>
                         <b>{ok_ime}</b>
-                        <p><b>Vlak dolazi na čvor u:</b>
+                        <p><b>Vlak se nalazi na čvoru u:</b>
                         {ok}</p>
                         <p><b><u>*Vozni red prikazan je samo za radni tjedan (pon-pet). Vozni red vikendom razlikuje se od prikazanog.</u></b></p>
-                        <img src="{slika}" alt = "Postaja" style="width:300px;height:160px;/>"
+                        <img src="{slika}" alt = "Postaja" style="width:300px;height:150px;/>"
                         """)
 
 m = folium.Map(location = [46.1639, 16.83], zoom_start = 14.8)
@@ -172,8 +172,8 @@ folium.Marker(
     naslov = 'BREGI',
     opis = 'željeznički kolodvor.',
     slika = 'https://raw.githubusercontent.com/dkundih/dkundih-busko/master/slike/vlak.jpg',
-    dk_ime = 'BREGI -> KOPRIVNICA',
-    ok_ime= 'KOPRIVNICA -> DRNJE',
+    dk_ime = 'KOPRIVNIČKI BREGI -> KOPRIVNICA',
+    ok_ime= 'KOPRIVNICA -> KOPRIVNIČKI BREGI',
     ok = T_V_OUTPUT['BREGI']['OK'],
     dk = T_V_OUTPUT['BREGI']['PK'],
             )).add_to(m)
