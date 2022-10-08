@@ -37,7 +37,7 @@ def infoL1(naslov, opis = None, ak = None, ka = None, slika = None,):
                         <p><b>Busko se nalazi na čvoru u:</b>
                         {ka}</p>
                         <b>KAMPUS -> KOLODVOR</b>
-                        <p><b>Busko se nalazi na čvoru u u:</b>
+                        <p><b>Busko se nalazi na čvoru u:</b>
                         {ak}</p>
                         <p><b><u>*Vozi samo radnim danima (pon-pet). Ne vozi vikendom (sub i ned).</u></b></p>
                         <img src="{slika}" alt = "Postaja" style="width:300px;height:160px;/>"
